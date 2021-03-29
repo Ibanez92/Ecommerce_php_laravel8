@@ -58,4 +58,4 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function() {
 // $action = Route::currentRouteAction('logout'); // string
 // $route = Route::current(); // Illuminate\Routing\Route
 
-Route::post('/logout', 'UserController@logout')->name('logout');
+// Route::post('/logout', 'UserController@logout')->name('logout');
