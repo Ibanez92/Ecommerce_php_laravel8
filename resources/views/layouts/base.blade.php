@@ -67,7 +67,6 @@
 									</ul>
 								</li>
 								@if(Route::has('login'))
-									
 									@auth
 										@if(Auth::user()->utype === 'ADM')
 										<li class="menu-item menu-item-has-children parent" >
@@ -76,6 +75,13 @@
 												<li class="menu-item" >
 													<a title="Dashboard" href="{{  route('admin.dashboard') }}">Dashboard</a>
 												</li>
+												<form method="POST" action="{{  route('logout') }}">
+													{{-- @method('POST') --}}
+													@csrf
+													<li class="menu-item">
+														<a href="{{  route('logout') }}" onclick="event.preventDefault(); .closest('form').submit();">Logout</a>
+													</li>
+												</form>
 											</ul>
 										</li>
 										@else
@@ -85,6 +91,13 @@
 													<li class="menu-item" >
 														<a title="Dashboard" href="{{  route('user.dashboard') }}">Dashboard</a>
 													</li>
+													<form method="POST" action="{{  route('logout') }}">
+													{{-- @method('POST') --}}
+														@csrf
+														<li class="menu-item">
+															<a href="{{  route('logout') }}" onclick="event.preventDefault(); .closest('form').submit();">Logout</a>
+														</li>
+													</form>
 												</ul>
 											</li>
 										@endif

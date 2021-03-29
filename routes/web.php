@@ -47,3 +47,15 @@ Route::middleware(['auth:sanctum','verified'])->group(function() {
 Route::middleware(['auth:sanctum','verified','authadmin'])->group(function() {
     Route::get('/admin/dashboard' ,AdminDashboardComponent::class)->name('admin.dashboard');
 });
+
+// Route::post('/logout', function () {
+
+// })->name('logout');
+// Route::post('logout', function ($callback) {
+    
+// });
+// Route::post($uri, $callback);
+// $action = Route::currentRouteAction('logout'); // string
+// $route = Route::current(); // Illuminate\Routing\Route
+
+Route::post('/logout', 'UserController@logout')->name('logout');
